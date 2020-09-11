@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-09-10T12:26:14.429Z</updated>
+  <updated>2020-09-11T12:35:51.405Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>electromagnetic wave 1</title>
+    <link href="http://example.com/2020/09/11/electromagnetic-wave-1/"/>
+    <id>http://example.com/2020/09/11/electromagnetic-wave-1/</id>
+    <published>2020-09-11T01:48:12.000Z</published>
+    <updated>2020-09-11T12:35:51.405Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先是数学基础部分，场波主要用到的数学知识是矢量分析：</p><p>1.梯度</p><script type="math/tex; mode=display">\begin{aligned}&grad f=\lim_{\Delta V\rightarrow0}\frac{\oint_{\Delta S}{fd\overrightarrow{S}}}{\Delta V}=\hat{x}\frac{\partial{f}}{\partial{x}}+\hat{y}\frac{\partial{f}}{\partial{y}}+\hat{z}\frac{\partial{f}}{\partial{z}}\\&\nabla \equiv \hat{x}\frac{\partial}{\partial{x}}+\hat{y}\frac{\partial}{\partial{y}}+\hat{z}\frac{\partial}{\partial{z}}\\&grad f=\nabla f\end{aligned}</script><p>对于一元函数来说，梯度表示斜率；对于多元函数来说，梯度表示函数值变化最快的方向。</p><p>另外，在柱坐标系和球坐标系中，梯度的表达式子如下所示：<br>柱坐标系：$\nabla = \hat{\rho}\frac{\partial}{\partial{\rho}}+\hat{\phi}\frac{\partial}{\rho\partial{\phi}}+\hat{z}\frac{\partial}{\partial{z}}$<br>球坐标系：$\nabla = \hat{r}\frac{\partial}{\partial{r}}+\hat{\theta}\frac{\partial}{r\partial{\theta}}+\hat{\phi}\frac{\partial}{r\sin{\theta}\partial{\phi}}$<br><a id="more"></a><br>2.散度（沿矢量方向变化）</p><script type="math/tex; mode=display">\begin{aligned}&div\overrightarrow{A}=\lim_{\Delta{V}\rightarrow0}\frac{\oint_{\Delta S}{\overrightarrow{A}d\overrightarrow{S}}}{\Delta V}=\hat{x}\frac{\partial{A_x}}{\partial{x}}+\hat{y}\frac{\partial{A_y}}{\partial{y}}+\hat{z}\frac{\partial{A_z}}{\partial{z}}\\&div \overrightarrow{A} \equiv \nabla \cdot A\\&\iiint_{V}\nabla\cdot\overrightarrow{A}dV=\oint_{\Delta S}{\overrightarrow{A}d\overrightarrow{S}}\end{aligned}</script><p>3.旋度（垂直于矢量方向变化）</p><script type="math/tex; mode=display">\begin{aligned}&curl\overrightarrow{A}=\lim_{\Delta{S}\rightarrow{0}}{\frac{\oint{\overrightarrow{A}d\overrightarrow{l}}}{\Delta{S}}} \\&\iiint_V{\nabla\times\overrightarrow{A}}=\oint_S{d\overrightarrow{S}\times{\overrightarrow{A}}}\\&\iint_S({\nabla\times\overrightarrow{A}})d\overrightarrow{S}=\oint_C{\overrightarrow{A}d\overrightarrow{l}}\end{aligned}</script><p>一些常用的结论：</p><script type="math/tex; mode=display">\begin{aligned}&\nabla\times(\nabla\phi)=0\\&\nabla\cdot(\nabla\times\overline{A})=0\\&\nabla\cdot(\overline{A}\times\overline{B})=\overline{B}\cdot(\nabla\times\overline{A})-\overline{A}\cdot(\nabla\times\overline{B})\\&\nabla\times(\nabla\times\overline{A})=\nabla(\nabla\cdot\overline{A})-\nabla^2{\overline{A}}\\&\overline{C}\times(\overline{A}\times\overline{B})=\overline{A}(\overline{C}\cdot\overline{B})-(\overline{C}\cdot\overline{A})\overline{B}\end{aligned}</script><p>对于一般的坐标系（$h_1u_1,h_2u_2,h_3u_3$）:</p><script type="math/tex; mode=display">\begin{aligned}&\nabla\phi=\hat{u_1}\frac{\partial{\phi}}{h_1\partial{u_1}}+\hat{u_2}\frac{\partial{\phi}}{h_2\partial{u_2}}+\hat{u_3}\frac{\partial{\phi}}{h_3\partial{u_3}}\\&\nabla\cdot\overline{D}=\frac{1}{h_1h_2h_3}(\frac{\partial}{\partial{u_1}}(h_2h_3D_1)+\frac{\partial}{\partial{u_2}}(h_3h_1D_2)+\frac{\partial}{\partial{u_3}}(h_1h_2D_3))\\&\nabla\times\overline{H}=\frac{1}{h_1h_2h_3}\left |\begin{array}{cccc}h_1\hat{u_1} &h_2\hat{u_2}   & h_3\hat{u_3} \\\frac{\partial}{\partial{u_1}} &\frac{\partial}{\partial{u_2}} & \frac{\partial}{\partial{u_3}}  \\h_1H_1 &h_2H_2   & h_3H_3 \\\end{array}\right|\end{aligned}</script><p>然后我们讨论Maxwell方程组，其微分形式如下：</p><script type="math/tex; mode=display">\begin{cases}&\nabla\times\overline{E}=-\frac{\partial\overline{B}}{\partial{t}} \\&\nabla\times\overline{H}=\overline{J}+\frac{\partial\overline{D}}{\partial{t}}\\&\nabla\cdot\overline{D}=\rho\\&\nabla\cdot\overline{B}=0\end{cases}</script><p>由于$\overline{B}=\mu_0\overline{H},\overline{D}=\epsilon_0\overline{E}$，在无源场（$\overline{J}=0$）中有如下关系：</p><script type="math/tex; mode=display">\begin{cases}&\nabla\times\overline{E}=-\mu_0\frac{\partial\overline{B}}{\partial{t}} \\&\nabla\times\overline{H}=\epsilon_0\frac{\partial\overline{D}}{\partial{t}}\end{cases}</script><p>继续写下去：</p><script type="math/tex; mode=display">\begin{aligned}\nabla\times\nabla\times\overline{E}&=-\mu_0\frac{\partial}{\partial{t}}(\nabla\times\overline{H})\\&=\mu_0\epsilon_0\frac{\partial^2}{\partial{t^2}}\overline{E}\\\nabla(\nabla\cdot\overline{E})-\nabla^2\overline{E}&=-\mu_0\epsilon_0\frac{\partial^2}{\partial{t^2}}\overline{E}\end{aligned}</script><p>由于无源，$\nabla\cdot\overline{E}=0$，所以有：</p><script type="math/tex; mode=display">(\nabla^2-\mu_0\epsilon_0\frac{\partial^2}{\partial{t^2}})\overline{E}=0\\(\frac{\partial^2}{\partial{x^2}}+\frac{\partial^2}{\partial{y^2}}+\frac{\partial^2}{\partial{z^2}}-\mu_0\epsilon_0\frac{\partial^2}{\partial{t^2}})\overline{E}=0</script><p>我们假设电场$\overline{E}$具有最简单的形式，指向x方向，传播方向为z方向，即：$\overline{E}=\hat{x}E_{(z,t)}$<br>由于$E_{(z,t)}$关于z和t的两次导数形式一样，猜想为余弦函数形式，配上系数得到$\overline{E}=\hat{x}E_0\cos{(kz-\omega{t})}$,系数之间的关系为:</p><script type="math/tex; mode=display">k^2=\mu_0\epsilon_0\omega^2</script><p>此为色散方程，$k$为波数，$\omega$为角频率，波的传播速度为:</p><script type="math/tex; mode=display">\frac{\Delta{z}}{\Delta{t}}=\frac{\omega}{k}=\frac{1}{\sqrt{\mu_0\epsilon_0}}</script><p>之后我们求解磁场$\overline{H}$:</p><script type="math/tex; mode=display">\begin{aligned}&-\mu_0\frac{\partial}{\partial{t}}\overline{H}=(\hat{x}\frac{\partial}{\partial{x}}+\hat{y}\frac{\partial}{\partial{y}}+\hat{z}\frac{\partial}{\partial{z}})\times\hat{x}E_0\cos{(kz-\omega{t})}\\&\eta_0 \equiv\sqrt{\frac{\mu_0}{\epsilon_0}}\\&\overline{H}=\hat{y}\frac{E_0}{\eta_0}\cos{(kz-\omega{t})}\end{aligned}</script><p>从而可以看出，电场、磁场的幅值同大同小，以光速传播。</p><p>我们定义坡印廷矢量作为衡量电磁波能量的物理量:</p><script type="math/tex; mode=display">\overline{S}=\overline{E}\times\overline{H}=\hat{z}\frac{E_0^2}{\eta_0}\cos^2{(kz-\omega{t})}</script><p>然后我们来讨论电磁波的极化：</p><p>令一电场方程如下所示：</p><script type="math/tex; mode=display">\overline{E}_{(z,t)}=\hat{x}E_0\cos{(kz-\omega{t})}+\hat{y}E_1\cos{(kz-\omega{t}+\phi)}</script><p>作归一化处理，令$A=\frac{E_1}{E_0}(A&gt;0)$,</p><script type="math/tex; mode=display">\overline{E}_{(z,t)}=\hat{x}\cos{(kz-\omega{t})}+\hat{y}A\cos{(kz-\omega{t}+\phi)}</script><p>当x,y方向的电场相位相同或相反时，合成的总电场方向始终不变，为线极化，即$\phi=2m\pi$或$\phi=(2m+1)\pi,m\in Z$,此时有：</p><script type="math/tex; mode=display">\overline{E}_{(z,t)}=\hat{x}\cos{(kz-\omega{t})}±\hat{y}A\cos{(kz-\omega{t})}</script><p>当$\phi=\frac{\pi}{2}$时，有：</p><script type="math/tex; mode=display">\overline{E}_{(z,t)}=\hat{x}\cos{(kz-\omega{t})}-\hat{y}A\sin{(kz-\omega{t})}</script><p>这时x,y方向的电场幅值满足椭圆关系，为椭圆极化即：</p><script type="math/tex; mode=display">E_x^2+\frac{E_y^2}{A^2}=1</script><p>注意到，当z=0时，随着$t$的增加，最初$E_x$逐渐减小，$E_y$逐渐增大，逆着电场传播方向（即$z$方向）看，电场方向作逆时针移动，此时用右手螺旋握法，大拇指指向电场传播方向，四指即为电场方向的移动方向，所以这种情况为右旋椭圆极化。</p><p>同理，当$\phi=-\frac{\pi}{2}$时，为左旋椭圆极化。</p><p>当A=1时，满足$E_x^2+E_y^2=1$,为圆极化。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;首先是数学基础部分，场波主要用到的数学知识是矢量分析：&lt;/p&gt;
+&lt;p&gt;1.梯度&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\begin{aligned}
+&amp;grad f=\lim_{\Delta V\rightarrow0}\frac{\oint_{\Delta S}{fd\overrightarrow{S}}}{\Delta V}=\hat{x}\frac{\partial{f}}{\partial{x}}+\hat{y}\frac{\partial{f}}{\partial{y}}+\hat{z}\frac{\partial{f}}{\partial{z}}\\
+&amp;\nabla \equiv \hat{x}\frac{\partial}{\partial{x}}+\hat{y}\frac{\partial}{\partial{y}}+\hat{z}\frac{\partial}{\partial{z}}\\
+&amp;grad f=\nabla f
+\end{aligned}&lt;/script&gt;&lt;p&gt;对于一元函数来说，梯度表示斜率；对于多元函数来说，梯度表示函数值变化最快的方向。&lt;/p&gt;
+&lt;p&gt;另外，在柱坐标系和球坐标系中，梯度的表达式子如下所示：&lt;br&gt;柱坐标系：$\nabla = \hat{\rho}\frac{\partial}{\partial{\rho}}+\hat{\phi}\frac{\partial}{\rho\partial{\phi}}+\hat{z}\frac{\partial}{\partial{z}}$&lt;br&gt;球坐标系：$\nabla = \hat{r}\frac{\partial}{\partial{r}}+\hat{\theta}\frac{\partial}{r\partial{\theta}}+\hat{\phi}\frac{\partial}{r\sin{\theta}\partial{\phi}}$&lt;br&gt;</summary>
+    
+    
+    
+    
+    <category term="course" scheme="http://example.com/tags/course/"/>
+    
+    <category term="electromagnetic wave" scheme="http://example.com/tags/electromagnetic-wave/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
