@@ -29,13 +29,6 @@
     
   </url>
   
-  <url>
-    <loc>http://example.com/2020/09/10/hello-world/</loc>
-    
-    <lastmod>2020-09-10</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>http://example.com/</loc>
@@ -60,5 +53,12 @@
   </url>
   
 
+  
+  <url>
+    <loc>http://example.com/categories/course/</loc>
+    <lastmod>2020-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>
